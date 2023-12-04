@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animal Clicker</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+    <div id="wrap">
+      <div id="expres" >
+        <!--header-->
+        <div class="d-flex flex-row">
+          <div class="col-sm-2 col-md-2">
+            <h1>Level</h1>
+            <h2 id="level">0</h2>
+          </div>
+          <div class="col-sm-8 col-md-8"><span id="backstart">3</span></div>
+          <div class="col-sm-2 col-md-2">
+            <h1>Timer</h1>
+            <h2 id="timer">--</h2>
+          </div>
+        </div>
+        
+        <!--picture-->
+        <div class="d-flex flex-row">
+          <div class="col-sm-3 col-md-3 "></div>
+          <div class="col-sm-6 col-md-6">
+            <img id="animal"/>
+          </div>
+          <div class="col-sm-3 col-md-3 "></div>
+        </div>
+        <br />
+        <button id="btn-start">Start</button>
+        <!--interaction-->
+        <div id="interaction">
+          <div class="d-flex flex-row;">
+            <div class="col-sm-4 col-md-4"><h3 id="counter-play"> 0 </h3></div>
+            <div class="col-sm-4 col-md-4"><h3 id="counter-bath"> 0 </h3></div>
+            <div class="col-sm-4 col-md-4"><h3 id="counter-feed"> 0 </h3></div>
+          </div>
+          <div class="d-flex flex-row">
+            <div class="col-sm-4 col-md-4">
+              <img src="./img/ball.jpg" id='play' style="display: none;"/>
+              <button id="btn-play" class="btn-action">Play</button>
+            </div>
+            <div class="col-sm-4 col-md-4">
+              <img src="./img/bubble.png" id='bath' style="display: none;"/>
+              <button id="btn-bath" class="btn-action">Bath</button>
+            </div>   
+            <div class="col-sm-4 col-md-4" id='feed_div'>
+              <img src="./img/cake.png" id='feed' style="display: none;"/>
+              <button id="btn-feed" class="btn-action">Feed</button>
+            </div> 
+          </div>
+          </br>
+          <h3>**Consecutive clicks to accumulate care times!**</h3>
+        </div>
+
+        <div id="final">
+          <button id="btn-download" class="btn-final"><a id="download-url">Download</a></button>
+          <button id="btn-result" class="btn-final">
+            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#result-modal">
+              Show Result
+            </a>
+          </button>
+          <button id="btn-reset" class="btn-final">Play Again</button>
+        </div>
+
+        <!-- pop-up dialog -->
+        <div class="modal fade" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="result-modal-title"></h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="result-modal-body"></div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+  </body>
+</html>

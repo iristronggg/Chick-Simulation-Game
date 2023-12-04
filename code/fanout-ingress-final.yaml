@@ -1,0 +1,81 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/backends: '{"k8s-be-32724--424b17060a19318f":"HEALTHY","k8s1-424b1706-default-backenddownload-service-80-a05ff675":"HEALTHY","k8s1-424b1706-default-backendgetanimals-service-80-a3936765":"HEALTHY","k8s1-424b1706-default-backendgetinfo-service-80-00f7ab26":"HEALTHY","k8s1-424b1706-default-fronttest-service-80-bdd783df":"HEALTHY"}'
+    ingress.kubernetes.io/forwarding-rule: k8s2-fr-vduk24fk-default-fanout-ingress-kiej4gjv
+    ingress.kubernetes.io/target-proxy: k8s2-tp-vduk24fk-default-fanout-ingress-kiej4gjv
+    ingress.kubernetes.io/url-map: k8s2-um-vduk24fk-default-fanout-ingress-kiej4gjv
+  creationTimestamp: "2022-06-06T09:33:07Z"
+  finalizers:
+  - networking.gke.io/ingress-finalizer-V2
+  generation: 11
+  managedFields:
+  - apiVersion: networking.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:ingress.kubernetes.io/backends: {}
+          f:ingress.kubernetes.io/forwarding-rule: {}
+          f:ingress.kubernetes.io/target-proxy: {}
+          f:ingress.kubernetes.io/url-map: {}
+        f:finalizers:
+          .: {}
+          v:"networking.gke.io/ingress-finalizer-V2": {}
+      f:status:
+        f:loadBalancer:
+          f:ingress: {}
+    manager: glbc
+    operation: Update
+    subresource: status
+    time: "2022-06-06T09:36:32Z"
+  - apiVersion: networking.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:rules: {}
+    manager: GoogleCloudConsole
+    operation: Update
+    time: "2022-06-06T13:18:32Z"
+  name: fanout-ingress
+  namespace: default
+  resourceVersion: "1121221"
+  uid: eaaa715f-f8a5-4733-9f9a-590df9522696
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: backenddownload-service
+            port:
+              number: 80
+        path: /download
+        pathType: Prefix
+      - backend:
+          service:
+            name: backendgetanimals-service
+            port:
+              number: 80
+        path: /get_animals
+        pathType: Prefix
+      - backend:
+          service:
+            name: backendgetinfo-service
+            port:
+              number: 80
+        path: /get_info
+        pathType: Prefix
+      - backend:
+          service:
+            name: fronttest-service
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - ip: 34.117.178.103
